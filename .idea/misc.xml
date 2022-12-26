@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PROJECTS/bat-budget-analyze-tracker/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/PROJECTS/bat-budget-analyze-tracker/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/PROJECTS/bat-budget-analyze-tracker/app/src/main/res/layout/activity_signup.xml" value="0.18385416666666668" />
       </map>
     </option>
   </component>
