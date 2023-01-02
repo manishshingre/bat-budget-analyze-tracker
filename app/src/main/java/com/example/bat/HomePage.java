@@ -7,7 +7,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.View;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+
 public class HomePage extends AppCompatActivity {
+
+    Python py = Python.getInstance();
+    final PyObject pyobj = py.getModule("//PYTHON KA FILE NAME");
+
+    //PROJECT FOLDER ME SRC/MAIN/PYTHON YEH PATH PE PYTHON KA SCRIPT
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
