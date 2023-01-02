@@ -1,11 +1,29 @@
 plugins {
     id 'com.android.application'
+    id 'com.chaquo.python'
 }
 
 android {
+
+    sourceSets {
+        main {
+            python.srcDir "src/main/python"
+        }
+
+    }
+
     compileSdk 32
 
+
+
     defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+
+        python {
+            version "3.11"
+        }
         applicationId "com.example.bat"
         minSdk 24
         targetSdk 32
