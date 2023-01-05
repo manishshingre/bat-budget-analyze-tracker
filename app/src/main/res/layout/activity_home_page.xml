@@ -44,19 +44,31 @@
         </LinearLayout>
 
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="550sp"
-            android:layout_below="@+id/layoutToolBar"
             android:id="@+id/capimg"
-            android:src="@drawable/camimg"
-            android:contentDescription="@string/capture_image"/>
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:layout_below="@+id/layoutToolBar"
+            android:contentDescription="@string/capture_image"
+            android:src="@drawable/camimg" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="250sp"
-            android:text="Upload doc"
+            android:id="@+id/upbtn"
+            android:layout_width="356dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/capimg"
-            android:id="@+id/upbtn"/>
+            android:layout_marginTop="18dp"
+            android:layout_centerHorizontal="true"
+            android:text="Upload doc" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textSize="20sp"
+            android:id="@+id/img_text"
+            android:padding="10dp"
+            android:layout_below="@+id/upbtn"
+            android:layout_marginTop="10dp"/>
+
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

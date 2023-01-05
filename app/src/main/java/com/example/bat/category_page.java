@@ -33,13 +33,22 @@ public class category_page extends Activity {
         MenuItem profile_act = navigationView.getMenu().findItem(R.id.menuProfile);
         MenuItem reports_act = navigationView.getMenu().findItem(R.id.menuReports);
         MenuItem home_act = navigationView.getMenu().findItem(R.id.menuHome);
-
+        MenuItem categories_act = navigationView.getMenu().findItem(R.id.menuCategories);
 
         history.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intenthis = new Intent(category_page.this,category_page.class);
+                Intent intenthis = new Intent(category_page.this,HistoryPage.class);
                 startActivity(intenthis);
+                return true;
+            }
+        });
+
+        categories_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intentcat = new Intent(category_page.this,category_page.class);
+                startActivity(intentcat);
                 return true;
             }
         });

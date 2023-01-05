@@ -11,12 +11,12 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Profile extends AppCompatActivity {
+public class HistoryPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_history_page);
 
         final DrawerLayout drawable1 = findViewById(R.id.drawlayout);
 
@@ -39,7 +39,7 @@ public class Profile extends AppCompatActivity {
         history.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intenthis = new Intent(Profile.this,HistoryPage.class);
+                Intent intenthis = new Intent(HistoryPage.this,HistoryPage.class);
                 startActivity(intenthis);
                 return true;
             }
@@ -48,7 +48,7 @@ public class Profile extends AppCompatActivity {
         categories_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intentcat = new Intent(Profile.this,category_page.class);
+                Intent intentcat = new Intent(HistoryPage.this,category_page.class);
                 startActivity(intentcat);
                 return true;
             }
@@ -57,7 +57,7 @@ public class Profile extends AppCompatActivity {
         profile_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intentprof = new Intent(Profile.this,Profile.class);
+                Intent intentprof = new Intent(HistoryPage.this,Profile.class);
                 startActivity(intentprof);
                 return true;
             }
@@ -66,7 +66,7 @@ public class Profile extends AppCompatActivity {
         reports_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intentrep = new Intent(Profile.this,Reports.class);
+                Intent intentrep = new Intent(HistoryPage.this,Reports.class);
                 startActivity(intentrep);
                 return true;
             }
@@ -75,7 +75,7 @@ public class Profile extends AppCompatActivity {
         home_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intenth = new Intent(Profile.this,HomePage.class);
+                Intent intenth = new Intent(HistoryPage.this,HomePage.class);
                 startActivity(intenth);
                 return true;
             }

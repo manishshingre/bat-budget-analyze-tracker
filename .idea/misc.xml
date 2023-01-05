@@ -3,12 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
+        <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_history_page.xml" value="0.16979166666666667" />
+        <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_home_page.xml" value="0.14666666666666667" />
         <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_login.xml" value="0.14130434782608695" />
+        <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_profile.xml" value="0.18385416666666668" />
         <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_reports.xml" value="0.18385416666666668" />
         <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/activity_signup.xml" value="0.14130434782608695" />
+        <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/category_page.xml" value="0.1" />
         <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/layout/layout_navigation_header.xml" value="0.22" />
         <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/menu/navigation_menu.xml" value="0.1" />
+        <entry key="..\:/bat-budget-analyze-tracker/app/src/main/res/xml/provider_paths.xml" value="0.18385416666666668" />
       </map>
     </option>
   </component>

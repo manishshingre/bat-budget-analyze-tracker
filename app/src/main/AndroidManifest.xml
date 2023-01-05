@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bat">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true">
+
+    </uses-feature>
+
     <application
         android:name="com.chaquo.python.android.PyApplication"
         android:allowBackup="true"
@@ -14,6 +20,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BAT"
         tools:targetApi="31">
+        <activity
+            android:name=".HistoryPage"
+            android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths">
+
+            </meta-data>
+        </provider>
+
         <activity
             android:name=".captureImage"
             android:exported="false" />

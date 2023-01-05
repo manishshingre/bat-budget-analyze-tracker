@@ -19,10 +19,16 @@
         tools:layout="@layout/activity_home_page" />
 
     <activity
-        android:id="@+id/menuHistory"
+        android:id="@+id/menuCategories"
         android:name="com.example.bat.category_page"
+        android:label="@string/categories"
+        tools:layout="@layout/category_page"/>
+
+    <activity
+        android:id="@+id/menuHistory"
+        android:name="com.example.bat.HistoryPage"
         android:label="@string/history"
-        tools:layout="@layout/category_page" />
+        tools:layout="@layout/activity_history_page" />
 
     <activity
         android:id="@+id/menuReports"
