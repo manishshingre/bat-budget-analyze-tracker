@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:text="CATEGORIES"
+                android:text="@string/categories"
+                android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
