@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addclothing"
+        android:text="ADD TRANSACTION"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_margin="40sp"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_title"
+        android:layout_below="@id/addclothing"
+        android:background="#30ffffff"
+        android:hint="Title"
+        android:inputType="text"
+        android:autofillHints="Title"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:drawablePadding="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_amount"
+        android:layout_below="@id/c_title"
+        android:background="#30ffffff"
+        android:hint="Amount"
+        android:autofillHints="Amount"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:drawablePadding="20dp"/>
+
+    <EditText
+        android:id="@+id/c_when"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/c_amount"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="Transaction_performed"
+        android:background="#30ffffff"
+        android:drawablePadding="20dp"
+        android:hint="Date"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_sub_date"
+        android:layout_below="@id/c_when"
+        android:text="Pick Date"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_200"
+        android:layout_margin="5dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_time"
+        android:layout_below="@id/c_sub_date"
+        android:background="#30ffffff"
+        android:hint="Time "
+        android:autofillHints="Transaction_performed"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:drawablePadding="20dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_sub_time"
+        android:layout_below="@id/c_time"
+        android:text="Pick Time"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_200"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_submit"
+        android:layout_below="@id/c_sub_time"
+        android:text="@string/submit"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_200"
+        android:layout_margin="20dp"/>
+
+</RelativeLayout>
