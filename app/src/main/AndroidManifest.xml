@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.bat" >
+    package="com.example.bat">
 
     <application
         android:name="com.chaquo.python.android.PyApplication"
@@ -13,29 +13,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BAT"
-        tools:targetApi="31" >
-
+        tools:targetApi="31">
+        <activity
+            android:name=".captureImage"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="true" />
+        <activity
+            android:name=".Reports"
+            android:exported="true" />
         <activity
             android:name=".HomePage"
-            android:exported="true" />
-        <activity
-            android:name=".signup"
-            android:exported="true" />
-        <activity
-            android:name=".login"
-            android:exported="true" >
-
-        </activity>
-
-        <activity
-            android:name=".manual_house"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".signup"
+            android:exported="true" />
+        <activity
+            android:name=".login"
+            android:exported="true" />
+        <activity
+            android:name=".category_page"
+            android:exported="true" />
+        <activity
+            android:name=".manual_house"
+            android:exported="true" />
     </application>
 
 </manifest>

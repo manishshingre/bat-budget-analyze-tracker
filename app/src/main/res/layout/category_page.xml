@@ -373,6 +373,7 @@
         app:menu="@menu/navigation_menu"
         android:id="@+id/naviview"
         android:layout_gravity="start"
+
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -3,40 +3,22 @@ package com.example.bat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 
-import com.chaquo.python.PyObject;
-import com.chaquo.python.Python;
 import com.google.android.material.navigation.NavigationView;
 
-public class HomePage extends AppCompatActivity {
-
-//    Python py = Python.getInstance();
-//    final PyObject pyobj = py.getModule("//PYTHON KA FILE NAME");
-
-    //PROJECT FOLDER ME SRC/MAIN/PYTHON YEH PATH PE PYTHON KA SCRIPT
-
-
-
-    ImageButton capImgBtn;
-
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_profile);
 
         final DrawerLayout drawable1 = findViewById(R.id.drawlayout);
-        capImgBtn = findViewById(R.id.capimg);
 
         findViewById(R.id.imgmenu).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +39,7 @@ public class HomePage extends AppCompatActivity {
         history.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                Intent intenthis = new Intent(HomePage.this,category_page.class);
+                Intent intenthis = new Intent(Profile.this,category_page.class);
                 startActivity(intenthis);
                 return true;
             }
@@ -66,7 +48,7 @@ public class HomePage extends AppCompatActivity {
         profile_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intentprof = new Intent(HomePage.this,Profile.class);
+                Intent intentprof = new Intent(Profile.this,Profile.class);
                 startActivity(intentprof);
                 return true;
             }
@@ -75,7 +57,7 @@ public class HomePage extends AppCompatActivity {
         reports_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intentrep = new Intent(HomePage.this,Reports.class);
+                Intent intentrep = new Intent(Profile.this,Reports.class);
                 startActivity(intentrep);
                 return true;
             }
@@ -84,17 +66,9 @@ public class HomePage extends AppCompatActivity {
         home_act.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Intent intenth = new Intent(HomePage.this,HomePage.class);
+                Intent intenth = new Intent(Profile.this,HomePage.class);
                 startActivity(intenth);
                 return true;
-            }
-        });
-
-        capImgBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentcapimg = new Intent(HomePage.this, captureImage.class);
-                startActivity(intentcapimg);
             }
         });
     }

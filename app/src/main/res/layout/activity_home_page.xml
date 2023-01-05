@@ -11,8 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <LinearLayout
             android:layout_width="match_parent"
+            android:id="@+id/layoutToolBar"
             android:layout_height="?actionBarSize"
             android:background="@color/mainheader"
             android:gravity="center_vertical"
@@ -41,6 +43,20 @@
 
         </LinearLayout>
 
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="550sp"
+            android:layout_below="@+id/layoutToolBar"
+            android:id="@+id/capimg"
+            android:src="@drawable/camimg"
+            android:contentDescription="@string/capture_image"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:text="Upload doc"
+            android:layout_below="@+id/capimg"
+            android:id="@+id/upbtn"/>
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -49,6 +65,7 @@
         app:menu="@menu/navigation_menu"
         android:id="@+id/naviview"
         android:layout_gravity="start"
+
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>
