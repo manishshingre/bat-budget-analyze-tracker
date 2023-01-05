@@ -1,5 +1,6 @@
 package com.example.bat;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-public class manual_house extends AppCompatActivity {
+public class manual_house extends Activity {
 
     TextView h_txtDate,h_txtTime;
     Button h_btnDate, h_btnTime;
