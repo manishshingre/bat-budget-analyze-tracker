@@ -65,6 +65,8 @@
             android:layout_height="200dp"
             android:textSize="20sp"
             android:id="@+id/img_text"
+            android:textColor="@color/teal_200"
+            android:text="hiii"
             android:padding="10dp"
             android:layout_below="@+id/upbtn"
             android:layout_marginTop="10dp"/>

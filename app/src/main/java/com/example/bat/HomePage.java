@@ -12,6 +12,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -47,17 +48,16 @@ public class HomePage extends AppCompatActivity {
     TextView img_textview;
     ActivityResultLauncher<Intent> activityResultLauncher;
 
+    Python python = Python.getInstance();
+    PyObject pyobj = python.getModule("eocr");
+    PyObject obj = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
-        if(!Python.isStarted()){
-            Python.start(new AndroidPlatform(this));
-        }
-
-        Python py = Python.getInstance();
+        
         final DrawerLayout drawable1 = findViewById(R.id.drawlayout);
         capImgBtn = findViewById(R.id.capimg);
         img_textview = findViewById(R.id.img_text);
@@ -132,6 +132,7 @@ public class HomePage extends AppCompatActivity {
         });
 
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onActivityResult(ActivityResult result) {
                 Bundle extras = result.getData().getExtras();
@@ -144,7 +145,12 @@ public class HomePage extends AppCompatActivity {
 
                 Bitmap bm = result1.get();
                 imageUri = saveImage(bm,HomePage.this);
-                img_textview.setText(""+imageUri);
+
+                obj = pyobj.callAttr("main", imageUri.toString());
+                img_textview.setText(obj.toString());
+
+
+//                img_textview.setText(""+imageUri);
 
             }
         });
@@ -169,8 +175,6 @@ public class HomePage extends AppCompatActivity {
             e.printStackTrace();
         }
         return uri;
-
-//        PyObject pyobj = py.getModule("eocr");
 
     }
 }

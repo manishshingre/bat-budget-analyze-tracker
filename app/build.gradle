@@ -23,6 +23,10 @@ android {
 
         python {
             version "3.10"
+            pip{
+                install "numpy"
+                install "easyocr"
+            }
         }
         applicationId "com.example.bat"
         minSdk 24
