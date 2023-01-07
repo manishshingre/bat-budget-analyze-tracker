@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.core.view.GravityCompat;
@@ -16,6 +17,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -24,13 +27,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-
-import org.w3c.dom.Text;
+import com.google.mlkit.vision.common.InputImage;
+import com.google.mlkit.vision.text.Text;
+import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.mlkit.vision.text.latin.TextRecognizerOptions;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -135,7 +145,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onActivityResult(ActivityResult result) {
                 Bundle extras = result.getData().getExtras();
-                Uri imageUri;
+//                Uri imageUri;
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 WeakReference<Bitmap> result1 = new WeakReference<>(Bitmap.createScaledBitmap(
                         imageBitmap,imageBitmap.getHeight(), imageBitmap.getWidth(), false).copy(
@@ -143,9 +153,39 @@ public class HomePage extends AppCompatActivity {
                 );
 
                 Bitmap bm = result1.get();
-                imageUri = saveImage(bm,HomePage.this);
-                img_textview.setText(""+imageUri);
+//                imageUri = saveImage(bm,HomePage.this);
+//                img_textview.setText(""+imageUri);
 
+                InputImage fnimg = InputImage.fromBitmap(bm, 0);
+                TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
+                Task<Text> result2 = recognizer.process(fnimg).addOnSuccessListener(new OnSuccessListener<Text>() {
+                    @Override
+                    public void onSuccess(Text text) {
+                        StringBuilder result2 = new StringBuilder();
+                        for(Text.TextBlock block: text.getTextBlocks()){
+                            String blockText = block.getText();
+                            Point[] blockcornerPoint = block.getCornerPoints();
+                            Rect blockFrame = block.getBoundingBox();
+                            for(Text.Line line: block.getLines()){
+                                String lineText = line.getText();
+                                Point[] lineCornerPoint = line.getCornerPoints();
+                                Rect lineRect = line.getBoundingBox();
+                                for(Text.Element element:line.getElements()){
+                                    String elementText = element.getText();
+                                    result2.append(elementText);
+                                }
+                                img_textview.setText(blockText);
+                            }
+
+                        }
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(HomePage.this, "Fail to detect text from image.."+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

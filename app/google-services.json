@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "193649640218",
+    "project_id": "bat-te-mp",
+    "storage_bucket": "bat-te-mp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193649640218:android:1fae90c087734a2f4aa2a3",
+        "android_client_info": {
+          "package_name": "com.example.bat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193649640218-o7r659km3f0gt8fkq8umdpkphnmsefpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeusLuezl8bKREoyi-ZosKyz_u3vz_a1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193649640218-o7r659km3f0gt8fkq8umdpkphnmsefpb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
